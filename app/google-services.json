@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "714603193454",
+    "firebase_url": "https://bookstore-b36ef-default-rtdb.firebaseio.com",
+    "project_id": "bookstore-b36ef",
+    "storage_bucket": "bookstore-b36ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:714603193454:android:b05ee7b0d862c55242b27f",
+        "android_client_info": {
+          "package_name": "com.udinus.bookstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "714603193454-gv8tka32viopr57ksrvqmfuhiofh4tpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDn2TqxM0hfrj_XZ_dUQbXJpT6wneM1XN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "714603193454-gv8tka32viopr57ksrvqmfuhiofh4tpm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

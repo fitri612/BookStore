@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="product"
+            type="com.udinus.uas_12884_12871_12154_12886.models.Product" />
+
+        <variable
+            name="shopInterface"
+            type="com.udinus.uas_12884_12871_12154_12886.adapters.ShopListAdapter.ShopInterface" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{() -> shopInterface.onItemClick(product)}"
+        >
+
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/deliv"
+            android:productImage="@{product.imageUrl}"
+            />
+
+        <TextView
+            android:id="@+id/productNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productImageView"
+            android:text="@{product.name}"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productNameTextView"
+            android:textAlignment="center"
+            android:text="@{`Rp` + String.valueOf(product.price) }"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+
+        <TextView
+            android:id="@+id/availableTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/priceTextView"
+            android:textAlignment="center"
+            android:text="@{product.available ? `Available` : `Out of stock`}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+            android:textColor="@{product.available ? @color/textSecondary : @color/red}" />
+
+        <Button
+            android:id="@+id/addToCartButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/availableTextView"
+            android:layout_gravity="center"
+            android:background="@color/black"
+            android:enabled="@{product.available}"
+            android:onClick="@{() -> shopInterface.onItemClick(product)}"
+            android:text="Show Detail"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
+    </RelativeLayout>
+</layout>
